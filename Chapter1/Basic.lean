@@ -26,11 +26,13 @@ theorem diff_eq_empty (A B : Set α) : A \ B = ∅ ↔ A ⊆ B := by
   sorry
 
 /-Exercise 1.7 a-/
-theorem id_left_injective {f : X → Y} {g : Y → X} (hId : g ∘ f = id) : Function.Injective f := by
+theorem id_left_injective {f : X → Y} {g : Y → X}
+(hId : ∀ x, g (f x) = x) : Function.Injective f := by
   sorry
 
 /-Exercise 1.7 b-/
-theorem id_right_surjective {f : X → Y} {g : Y → X} (hId : g ∘ f = id) : Function.Surjective g := by
+theorem id_right_surjective {f : X → Y} {g : Y → X}
+(hId : ∀ x, g (f x) = x) : Function.Surjective g := by
   sorry
 
 /-Exercise 1.8 a-/
@@ -42,7 +44,8 @@ theorem compl_union (A B : Set α) : (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ := by
   sorry
 
 /-Exercise 1.10-/
-theorem mul_id_unique {F : Type*} [Field F] {e1 e2 : F} (h1 : ∀ x : F, e1 * x = x) (h2 : ∀ x : F, e2 * x = x) : e1 = e2 := by
+theorem mul_id_unique {F : Type*} [Field F] {e1 e2 : F}
+(h1 : ∀ x : F, e1 * x = x) (h2 : ∀ x : F, e2 * x = x) : e1 = e2 := by
   sorry
 
 end chapter1
