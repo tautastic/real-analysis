@@ -48,4 +48,14 @@ theorem mul_id_unique {F : Type*} [Field F] {e1 e2 : F}
 (h1 : ∀ x : F, e1 * x = x) (h2 : ∀ x : F, e2 * x = x) : e1 = e2 := by
   sorry
 
+/-Exercise 1.12 a-/
+theorem lt_add_trans {F : Type*} [LinearOrderedField F] {a b c d : F}
+(h1: a < b) (h2: c < d) : a + c < b + d := by
+  sorry
+
+/-Exercise 1.12 b-/
+theorem not_necessarily_lt_mul {F : Type*} [LinearOrderedField F] {a b c d : F}
+(h1: a < b) (h2: c < d) : ¬(a * c < b * d) := by
+  sorry
+
 end chapter1
