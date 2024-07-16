@@ -62,4 +62,8 @@ theorem not_necessarily_lt_mul {F : Type*} [LinearOrderedField F] :
 theorem abs_mul_eq_mul_abs {a b : ℝ} : |a * b| = |a| * |b| := by
   sorry
 
+/-Exercise 1.17-/
+theorem pow_lt {a b : ℝ} (h1: 0 < a) (h2: a < b) : ∀ n : ℕ+, a ^ (n: ℕ) < b ^ (n: ℕ) := by
+  sorry
+
 end chapter1
