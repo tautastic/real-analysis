@@ -54,8 +54,8 @@ theorem lt_add_trans {F : Type*} [LinearOrderedField F] {a b c d : F}
   sorry
 
 /-Exercise 1.12 b-/
-theorem not_necessarily_lt_mul {F : Type*} [LinearOrderedField F] {a b c d : F}
-(h1: a < b) (h2: c < d) : ¬(a * c < b * d) := by
+theorem not_necessarily_lt_mul {F : Type*} [LinearOrderedField F]:
+(∃ a b c d : F, (a < b ∧ c < d) → b * d ≤ a * c) := by
   sorry
 
 end chapter1
