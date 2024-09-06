@@ -90,8 +90,8 @@ theorem diff_eq_empty (A B : Set α) : A \ B = ∅ ↔ A ⊆ B := by
       contradiction
 
 /-Exercise 1.7 a-/
-theorem id_left_injective {f : X → Y} {g : Y → X}
-(hId : ∀ x, g (f x) = x) : Function.Injective f := by
+theorem id_injective {f : X → Y} {g : Y → X}
+(hId : ∀ x, (g ∘ f) x = x) : Function.Injective (g ∘ f) := by
   unfold Function.Injective
   by_contra h
   push_neg at h
@@ -101,16 +101,22 @@ theorem id_left_injective {f : X → Y} {g : Y → X}
   contradiction
 
 /-Exercise 1.7 b-/
-theorem id_right_surjective {f : X → Y} {g : Y → X}
-(hId : ∀ x, g (f x) = x) : Function.Surjective g := by
+theorem id_surjective {f : X → Y} {g : Y → X}
+(hId : ∀ x, (g ∘ f) x = x) : Function.Surjective (g ∘ f) := by
   unfold Function.Surjective
   by_contra h
   push_neg at h
   choose x1 h using h
   revert h
-  simp only [ne_eq, imp_false, not_forall, not_not]
+  simp at hId ⊢
   rw [← hId x1]
-  use f x1
+  use x1
+
+/-Extra Exercise-/
+theorem id_bijective {f : X → Y} {g : Y → X}
+(hId : ∀ x, (g ∘ f) x = x) : Function.Bijective (g ∘ f)  := by
+  unfold Function.Bijective
+  exact ⟨id_injective hId, (id_surjective hId)⟩
 
 /-Exercise 1.8 a-/
 theorem compl_inter (A B : Set α) : (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ := by

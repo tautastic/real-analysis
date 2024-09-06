@@ -26,13 +26,18 @@ theorem diff_eq_empty (A B : Set α) : A \ B = ∅ ↔ A ⊆ B := by
   sorry
 
 /-Exercise 1.7 a-/
-theorem id_left_injective {f : X → Y} {g : Y → X}
-(hId : ∀ x, g (f x) = x) : Function.Injective f := by
+theorem id_injective {f : X → Y} {g : Y → X}
+(hId : ∀ x, (g ∘ f) x = x) : Function.Injective (g ∘ f) := by
   sorry
 
 /-Exercise 1.7 b-/
-theorem id_right_surjective {f : X → Y} {g : Y → X}
-(hId : ∀ x, g (f x) = x) : Function.Surjective g := by
+theorem id_surjective {f : X → Y} {g : Y → X}
+(hId : ∀ x, (g ∘ f) x = x) : Function.Surjective (g ∘ f) := by
+  sorry
+
+/-Extra Exercise-/
+theorem id_bijective {f : X → Y} {g : Y → X}
+(hId : ∀ x, (g ∘ f) x = x) : Function.Bijective (g ∘ f)  := by
   sorry
 
 /-Exercise 1.8 a-/
