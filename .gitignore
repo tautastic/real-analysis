@@ -1,0 +1,3 @@
+/.lake
+*.solution.lean
+.DS_Store
