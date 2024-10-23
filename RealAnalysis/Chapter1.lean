@@ -1,4 +1,4 @@
-import Mathlib.tactic
+import Mathlib.Tactic
 
 namespace chapter1
 universe u
