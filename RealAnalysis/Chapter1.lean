@@ -54,12 +54,12 @@ theorem mul_id_unique {F : Type*} [Field F] {e1 e2 : F}
   sorry
 
 /-Exercise 1.12 a-/
-theorem lt_add_trans {F : Type*} [LinearOrderedField F] {a b c d : F}
+theorem lt_add_trans {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F] {a b c d : F}
 (h1: a < b) (h2: c < d) : a + c < b + d := by
   sorry
 
 /-Exercise 1.12 b-/
-theorem not_necessarily_lt_mul {F : Type*} [LinearOrderedField F] :
+theorem not_necessarily_lt_mul {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F] :
 (∃ a b c d : F, a < b ∧ c < d ∧ b * d ≤ a * c) := by
   sorry
 
